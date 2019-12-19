@@ -3,6 +3,30 @@
   var examples = document.getElementsByClassName('ex-link');
   var input = document.getElementById('main-search');
   var speakers = document.getElementsByClassName('speaker');
+  var day_divs = document.getElementsByClassName('day');
+  var day_buttons = document.getElementsByClassName('col-top');
+
+  for (var i=0; i<day_buttons.length; i++) {
+    day_buttons[i].addEventListener('click', function() {
+      var selected_day = this.dataset.day;
+
+      for (var p=0; p<day_buttons.length; p++) {
+        if (day_buttons[p] === this) {
+          day_buttons[p].classList.add('active');
+        } else {
+          day_buttons[p].classList.remove('active');
+        }
+      }
+
+      for (var z=0; z<day_divs.length; z++) {
+        if (day_divs[z].dataset.day === selected_day) {
+          day_divs[z].style.display = 'block';
+        } else {
+          day_divs[z].style.display = 'none';
+        }
+      }
+    });
+  }
 
   function debounce(func, wait, immediate) {
     /* https://davidwalsh.name/javascript-debounce-function */
