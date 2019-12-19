@@ -34,6 +34,19 @@ body {
   color: white;
 }
 
+p.show-more {
+  text-align: center;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #aaa;
+  cursor: pointer;
+  padding: 20px;
+}
+
+p.show-more:hover {
+  background: #f4f3ee;
+}
+
 hr {
   border-bottom: 1px solid #7d5415;
 }
@@ -130,11 +143,10 @@ input.share-box {
 
 div.filterable {
   background-color: white;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 div.topper {
-  border-bottom: 1px solid #ccc;
   padding: 15px;
 }
 
@@ -239,6 +251,7 @@ span.label-master-class {
 
 div.card-content {
   padding: 15px;
+  display: none;
 }
 
 div.description p:first-of-type {

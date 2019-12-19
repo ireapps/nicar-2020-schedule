@@ -5,6 +5,7 @@
   var speakers = document.getElementsByClassName('speaker');
   var day_divs = document.getElementsByClassName('day');
   var day_buttons = document.getElementsByClassName('col-top');
+  var details_toggles = document.getElementsByClassName('show-more');
 
   for (var i=0; i<day_buttons.length; i++) {
     day_buttons[i].addEventListener('click', function() {
@@ -26,6 +27,19 @@
         }
       }
     });
+  }
+
+  for (var i=0; i<details_toggles.length; i++) {
+    details_toggles[i].addEventListener('click', function() {
+      var details = this.nextSibling.nextSibling;
+      if (this.innerHTML.toUpperCase() === 'SHOW MORE') {
+        this.innerHTML = 'SHOW LESS';
+        details.style.display = 'block';
+      } else {
+        this.innerHTML = 'SHOW MORE';
+        details.style.display = 'none';
+      }
+    })
   }
 
   function debounce(func, wait, immediate) {
