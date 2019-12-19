@@ -2,7 +2,7 @@
 
 *, *:after, *:before {
   -webkit-box-sizing:border-box;
-  box-sizing:border-box
+  box-sizing: border-box;
 }
 
 body {
@@ -21,6 +21,15 @@ body {
   display: flex;
 }
 
+.st {
+  flex: 1;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 5px;
+}
+
 .col-top {
   flex: 1;
   text-align: center;
@@ -30,7 +39,7 @@ body {
 }
 
 .col-top.active, .col-top:hover {
-  background: #66449D;
+  background: steelblue;
   color: white;
 }
 
@@ -98,7 +107,8 @@ img {
 h1 {
   text-align: center;
   font-size: 2em;
-  margin: 75px auto 10px;
+  margin: 1em auto 10px;
+  line-height: 1em;
 }
 
 section {
@@ -130,6 +140,7 @@ input#main-search {
   font-size: 30px;
   padding: 15px;
   background: white;
+  margin-top: 30px;
 }
 
 p.share, input.share-box {
@@ -229,24 +240,33 @@ div.filterable.demo {
   border-left: 10px solid #113421;
 }
 
-span.label-panel {
+div.filterable.special {
+  border: 1px solid #666;
+  border-left: 10px solid #666;
+}
+
+.label-panel {
   background: #66449D;
 }
 
-span.label-hands-on {
+.label-hands-on {
   background: #ae726a;
 }
 
-span.label-commons {
+.label-commons {
   background: #bf7836;
 }
 
-span.label-demo {
+.label-demo {
   background: #113421;
 }
 
-span.label-master-class {
+.label-master-class {
   background: #6aae8a;
+}
+
+.label-special {
+  background: #666;
 }
 
 div.card-content {

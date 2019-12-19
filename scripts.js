@@ -32,7 +32,7 @@
   for (var i=0; i<details_toggles.length; i++) {
     details_toggles[i].addEventListener('click', function() {
       var details = this.nextSibling.nextSibling;
-      if (this.innerHTML.toUpperCase() === 'SHOW MORE') {
+      if (this.innerHTML.toUpperCase().trim() === 'SHOW MORE') {
         this.innerHTML = 'SHOW LESS';
         details.style.display = 'block';
       } else {
