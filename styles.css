@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+div.clear {
+  margin-top: 5px;
+}
+
 body {
   /*background-color: #f2f2f2;*/
   background-color: #f4f3ee;
@@ -140,7 +144,7 @@ input#main-search {
   font-size: 30px;
   padding: 15px;
   background: white;
-  margin-top: 30px;
+  
 }
 
 p.share, input.share-box {
@@ -330,6 +334,7 @@ span.arrow-symbol {
 
   div.clear {
      text-align: right;
+     margin: inherit;
   }
 
 }
