@@ -129,6 +129,12 @@
     var search_terms = input.value.split(' ').map(function(x) {
       return x.toLowerCase();
     });
+    // handle searches for "r"
+    var r_idx = search_terms.indexOf('r');
+    if (r_idx > -1) {
+      search_terms[r_idx] = 'TheRProgrammingLanguage';
+    }
+
     var counts = {};
     for (var i=0; i<sessions.length; i++) {
       var this_div = sessions[i];
