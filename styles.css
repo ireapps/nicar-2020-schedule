@@ -9,6 +9,11 @@ div.clear {
   margin-top: 5px;
 }
 
+span.q {
+  border-bottom: 1px dotted steelblue;
+  cursor: help;
+}
+
 body {
   background-color: #F4F3EE;
   color: #0f0d0a;

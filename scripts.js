@@ -7,6 +7,7 @@
   var day_divs = document.getElementsByClassName('day');
   var day_buttons = document.getElementsByClassName('col-top');
   var details_toggles = document.getElementsByClassName('show-more');
+  var results_counters = document.getElementsByClassName('results-counter');
 
   var days = {
       0: 'Sunday',
@@ -107,6 +108,9 @@
     for (var i=0; i<sessions.length; i++) {
       sessions[i].style.display = 'block';
     };
+    Array.prototype.slice.call(results_counters).forEach(function(x) {
+      x.innerHTML = '';
+    })
   };
 
   for (var i=0; i<examples.length; i++) {
@@ -125,8 +129,13 @@
     var search_terms = input.value.split(' ').map(function(x) {
       return x.toLowerCase();
     });
+    var counts = {};
     for (var i=0; i<sessions.length; i++) {
       var this_div = sessions[i];
+      var this_day = this_div.dataset.day;
+      if (!counts[this_day]) {
+        counts[this_day] = 0;
+      }
       var match = false;
       var this_div_filters = this_div.dataset.filters;
       search_terms.forEach(function(term) {
@@ -138,10 +147,16 @@
       });
       if (match) {
         this_div.style.display = 'block';
+        counts[this_day]++;
       } else {
         this_div.style.display = 'none';
       }
     };
+    Array.prototype.slice.call(day_buttons).forEach(function(x) {
+      var day = x.dataset.day;
+      var count_span = x.querySelector('span.results-counter');
+      count_span.innerHTML = '(' + counts[day] + ')';
+    });
   }, 150);
 
   input.addEventListener('input', filter_sessions);
