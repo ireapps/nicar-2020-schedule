@@ -226,6 +226,7 @@ span.session-label {
   vertical-align: text-top;
   color: white;
   margin-bottom: 10px;
+  display: inline-block;
 }
 
 div.labeldiv {

@@ -170,14 +170,16 @@
   for (var i=0; i<speakers.length; i++) {
     speakers[i].addEventListener('click', function() {
       var arrow = this.querySelector('span.arrow-symbol');
-      var bio = this.parentNode.querySelector('.bio');
-      if (arrow.innerHTML === '👇') {
-        arrow.innerHTML = '👆';
-        bio.style.display = 'block';
-      } else {
-        arrow.innerHTML = '👇';
-        bio.style.display = 'none';
-      }
+      if (arrow) {
+        var bio = this.parentNode.querySelector('.bio');
+        if (arrow.innerHTML === '👇') {
+          arrow.innerHTML = '👆';
+          bio.style.display = 'block';
+        } else {
+          arrow.innerHTML = '👇';
+          bio.style.display = 'none';
+        }
+      }      
     });
   }
 
