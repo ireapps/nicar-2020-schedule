@@ -125,7 +125,7 @@
   };
 
   var filter_sessions = debounce(function() {
-    if (!input.value) { show_all(); return; };
+    if (!input.value.trim()) { show_all(); return; };
     var search_terms = input.value.split(' ').map(function(x) {
       return x.toLowerCase();
     });
