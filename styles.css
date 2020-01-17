@@ -216,6 +216,7 @@ div.bio {
   border-left: 1px solid #ccc;
   padding: 10px;
   margin: 0;
+  font-size: 14px;
 }
 
 span.session-label {
