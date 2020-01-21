@@ -135,7 +135,7 @@
       search_terms[r_idx] = 'TheRProgrammingLanguage';
     }
 
-    var counts = {};
+    var counts = {'all': 0};
     for (var i=0; i<sessions.length; i++) {
       var this_div = sessions[i];
       var this_day = this_div.dataset.day;
@@ -154,6 +154,7 @@
       if (match) {
         this_div.style.display = 'block';
         counts[this_day]++;
+        counts['all']++;
       } else {
         this_div.style.display = 'none';
       }
@@ -182,6 +183,5 @@
       }      
     });
   }
-
 
 })();
