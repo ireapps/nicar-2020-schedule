@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+section.sessions {
+  display: none;
+}
+
 div.clear {
   margin-top: 5px;
 }

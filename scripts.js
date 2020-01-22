@@ -1,4 +1,10 @@
-(function() {
+document.addEventListener('DOMContentLoaded', function() {
+
+  var loading = document.getElementsByClassName('loading')[0];
+  var main_content = document.getElementsByClassName('sessions')[0];
+
+  loading.innerHTML = '&nbsp;';
+  main_content.style.display = 'block';
 
   var sessions = document.getElementsByClassName('filterable');
   var examples = document.getElementsByClassName('ex-link');
@@ -128,7 +134,11 @@
     if (!input.value.trim()) { show_all(); return; };
     var search_terms = input.value.split(' ').map(function(x) {
       return x.toLowerCase();
+    }).filter(function(x) {
+      var term = x.trim().toLowerCase();
+      return term !== '' && term !== 'and' && term !== 'or';
     });
+
     // handle searches for "r"
     var r_idx = search_terms.indexOf('r');
     if (r_idx > -1) {
@@ -143,6 +153,7 @@
         counts[this_day] = 0;
       }      
       var this_div_filters = this_div.dataset.filters;
+      var match = false;
       search_terms.forEach(function(term) {
         if (this_div_filters.indexOf(term) > -1) {
           match = true;
@@ -163,7 +174,7 @@
       var count_span = x.querySelector('span.results-counter');
       count_span.innerHTML = '(' + counts[day] + ')';
     });
-  }, 250);
+  }, 200);
 
   input.addEventListener('input', filter_sessions);
 
@@ -183,4 +194,4 @@
     });
   }
 
-})();
+});
