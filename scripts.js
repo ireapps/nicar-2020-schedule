@@ -64,6 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     if (url_hash) {
+      console.log(url_hash);
       document.getElementById(url_hash).scrollIntoView();
     }
   }
