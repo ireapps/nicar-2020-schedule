@@ -135,14 +135,13 @@
       search_terms[r_idx] = 'TheRProgrammingLanguage';
     }
 
-    var counts = {'all': 0};
+    var counts = {};
     for (var i=0; i<sessions.length; i++) {
       var this_div = sessions[i];
       var this_day = this_div.dataset.day;
       if (!counts[this_day]) {
         counts[this_day] = 0;
-      }
-      var match = false;
+      }      
       var this_div_filters = this_div.dataset.filters;
       search_terms.forEach(function(term) {
         if (this_div_filters.indexOf(term) > -1) {
@@ -154,17 +153,17 @@
       if (match) {
         this_div.style.display = 'block';
         counts[this_day]++;
-        counts['all']++;
       } else {
         this_div.style.display = 'none';
       }
     };
+    console.log(counts);
     Array.prototype.slice.call(day_buttons).forEach(function(x) {
       var day = x.dataset.day;
       var count_span = x.querySelector('span.results-counter');
       count_span.innerHTML = '(' + counts[day] + ')';
     });
-  }, 150);
+  }, 250);
 
   input.addEventListener('input', filter_sessions);
 
