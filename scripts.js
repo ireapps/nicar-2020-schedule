@@ -64,7 +64,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     if (url_hash) {
-      console.log(url_hash);
       document.getElementById(url_hash).scrollIntoView();
     }
   }
@@ -169,7 +168,6 @@ document.addEventListener('DOMContentLoaded', function() {
         this_div.style.display = 'none';
       }
     };
-    console.log(counts);
     Array.prototype.slice.call(day_buttons).forEach(function(x) {
       var day = x.dataset.day;
       var count_span = x.querySelector('span.results-counter');
