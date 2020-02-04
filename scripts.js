@@ -37,8 +37,8 @@ document.addEventListener('DOMContentLoaded', function() {
       // make sure we actually made a date here
       if (date instanceof Date && !isNaN(date)) {
         
-        // if it's 'all', we good
-        if (nohashtag.indexOf('_all') < 0) {
+        // if it's TH, we good
+        if (date.getDay() !== 4) {
           // otherwise, activate the switch function
           var wday = days[date.getDay()].toLowerCase();
           switch_day_divs(wday, nohashtag);
