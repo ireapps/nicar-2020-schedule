@@ -64,10 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     if (url_hash) {
-      var target_div = document.getElementById(url_hash);
-      if (target_div) {
-        target_div.scrollIntoView();
-      }
+      document.getElementById(url_hash).scrollIntoView();
     }
   }
 
