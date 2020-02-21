@@ -157,13 +157,15 @@ document.addEventListener('DOMContentLoaded', function() {
       }      
       var this_div_filters = this_div.dataset.filters;
       var match = false;
-      search_terms.forEach(function(term) {
+      for (var x=0; x<search_terms.length; x++) {
+        var term = search_terms[x];
         if (this_div_filters.indexOf(term) > -1) {
           match = true;
         } else {
           match = false;
+          break;
         }
-      });
+      }
       if (match) {
         this_div.style.display = 'block';
         counts[this_day]++;
