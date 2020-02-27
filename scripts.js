@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
       6: 'Saturday'
     }
 
-    // handle hash links for sessions F-SU
+    // handle hash links for sessions TH-SU
     if (window.location.hash) {
       var nohashtag = window.location.hash.slice(1);
       var datestring = nohashtag.split('_')[0];
